@@ -1,0 +1,35 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Algorithms(solutions) of leetcode.com",
+  "main": "index.js",
+  "author": "Ahmed Mokhtar (https://www.linkedin.com/in/ahmedmokhtar-dev/)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "lint": "eslint --fix **/*.js",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx,json,css,scss,md}",
+    "play": "node playground",
+    "play:debug": "node --inspect-brk playground"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix"
+    ]
+  }
+}
